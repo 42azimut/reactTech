@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import EventPractice from './EventPractice';
+import ValidationSample from './ValidationSample';
 
 function App() {
-  return <EventPractice />;
+  return <ValidationSample />;
 }
 
 export default App;
