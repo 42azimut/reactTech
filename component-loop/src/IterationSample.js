@@ -1,17 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const IterationSample = () => {
-  const nums = [1, 2, 3, 4, 5];
-  const result = nums.map((num) => num * num);
-  console.log(result);
+  const [names, setNames] = useState([
+    { id: 1, text: '눈사람' },
+    { id: 2, text: '얼음' },
+    { id: 3, text: '눈' },
+    { id: 4, text: '바람' },
+  ]);
 
-  const names = ['눈사람', '얼음', '눈', '바람', 'ice'];
-  const nameList = names.map((name, index) => (
-    <li key={index}>
-      {index} : {name}
+  const [inputText, setInputText] = useState('');
+  const [nextId, setNextId] = useState(names.length + 1);
+
+  const onChange = (e) => setInputText(e.target.value);
+  const onClick = () => {
+    const nextNames = names.concat({
+      id: nextId,
+      text: inputText,
+    });
+    setNextId(nextId + 1);
+    setNames(nextNames);
+    setInputText('');
+  };
+
+  const nameList = names.map((name) => (
+    <li key={name.index}>
+      {name.id} - {name.text}
     </li>
   ));
-  return <ul>{nameList}</ul>;
+  return (
+    <>
+      <input type="text" value={inputText} onChange={onChange} />
+      <button onClick={onClick}>추가</button>
+      <ul>{nameList}</ul>
+    </>
+  );
 };
 
 export default IterationSample;
