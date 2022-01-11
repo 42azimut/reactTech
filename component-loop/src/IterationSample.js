@@ -17,14 +17,19 @@ const IterationSample = () => {
       id: nextId,
       text: inputText,
     });
-    setNextId(nextId + 1);
+    setNextId(nextId + 1); //nextId 값에 1을 더함
+    setNames(nextNames); // names 값을 업데이트함
+    setInputText(''); // inputText 자리 비움
+  };
+
+  const onRemove = (id) => {
+    const nextNames = names.filter((name) => name.id !== id);
     setNames(nextNames);
-    setInputText('');
   };
 
   const nameList = names.map((name) => (
-    <li key={name.index}>
-      {name.id} - {name.text}
+    <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+      {name.text}
     </li>
   ));
   return (
