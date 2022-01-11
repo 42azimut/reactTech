@@ -29,12 +29,15 @@ const IterationSample = () => {
 
   const nameList = names.map((name) => (
     <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+      {' '}
+      // 태그내 함수(파라미터) 사용시 화살표 익명함수
       {name.text}
     </li>
   ));
   return (
     <>
-      <input type="text" value={inputText} onChange={onChange} />
+      <input type="text" value={inputText} onChange={onChange} /> 태그안
+      함수사용
       <button onClick={onClick}>추가</button>
       <ul>{nameList}</ul>
     </>
