@@ -1,12 +1,8 @@
 import React from 'react';
-import UseReducerCounter from './UseReducerCounter';
+import UseReducerInfo from './UseReducerInfo';
 
 const App = () => {
-  return (
-    <div>
-      <UseReducerCounter />
-    </div>
-  );
+  return <UseReducerInfo />;
 };
 
 export default App;
