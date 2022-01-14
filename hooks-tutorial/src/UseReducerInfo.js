@@ -9,9 +9,11 @@ function reducer(state, action) {
 
 const UseReducerInfo = () => {
   const [state, dispatch] = useReducer(reducer, { name: '', nickname: '' });
+  console.log(state);
   const { name, nickname } = state;
+  console.log(name, nickname);
   const onChange = (e) => {
-    console.log(dispatch(e.target));
+    //console.log(dispatch(e.target));
     dispatch(e.target);
   };
 
