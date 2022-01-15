@@ -1,8 +1,8 @@
 import React from 'react';
-import UseReducerInfo from './UseReducerInfo';
+import UseMemoAverage from './UseMemoAverage';
 
 const App = () => {
-  return <UseReducerInfo />;
+  return <UseMemoAverage />;
 };
 
 export default App;
