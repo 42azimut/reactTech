@@ -26,10 +26,11 @@ const App = () => {
   // ref 를 사용하여 변수 담기
   const nextId = useRef(todos.length + 1);
 
+  // onInsert 는 props 로 TodoInsert 로 전달!
   const onInsert = useCallback(
     (text) => {
       const todo = {
-        id: nextId.current,
+        id: nextId.current, // useRef에서 변수.current 접근 사용!
         text,
         checked: false,
       };
@@ -38,10 +39,18 @@ const App = () => {
     },
     [todos],
   );
+
+  const onRemove = useCallback(
+    (id) => {
+      setTodos(todos.filter((todo) => todo.id !== id));
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} />
     </TodoTemplate>
   );
 };

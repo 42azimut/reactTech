@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import './TodoInsert.scss';
 import { MdAdd } from 'react-icons/md';
 
+// onInsert props로 받음 app.js 에서...
 const TodoInsert = ({ onInsert }) => {
   const [value, setValue] = useState('');
 
