@@ -79,7 +79,8 @@ const App = () => {
         <ul>
           {data.array.map((info) => (
             <li key={info.id} onDoubleClick={() => onRemove(info.id)}>
-              {info.username} {info.name}
+              <div>{info.username}</div>
+              <div>{info.name}</div>
             </li>
           ))}
         </ul>
