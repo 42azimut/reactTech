@@ -2,11 +2,13 @@ import React from 'react';
 import qs from 'qs';
 
 const About = ({ location }) => {
+  const path = qs.parse(location.pathname);
+  console.log('pathname: ', path);
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true, // 문자열 맨 앞 ? 물음표 생략
   });
   console.log(query);
-  const showDetail = query.detail === '123'; //쿼리 파싱 결과 값은 **"문자열"**
+  const showDetail = query.detail === 'true'; //쿼리 파싱 결과 값은 **"문자열"**
   return (
     <div>
       <h1>소개</h1>
