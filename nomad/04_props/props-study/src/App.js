@@ -2,7 +2,7 @@ import { useState, memo } from 'react';
 import './App.css';
 import Btn from './Btn';
 
-const MemorizedBtn = memo(Btn);
+//const MemorizedBtn = memo(Btn);
 
 function App() {
   const [value, setValue] = useState('Save Changes');
@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <h1>Props Tutorial</h1>
 
-      <MemorizedBtn text={value} changeValue={changeValue} />
-      <MemorizedBtn text="Continue" />
+      <Btn text="Save Changes" fontSize={18} />
+      <Btn text="Continue" />
     </div>
   );
 }
