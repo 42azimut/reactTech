@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const NomadUseState = () => {
+const InsideKmMiles = () => {
   const [amounts, setAmounts] = useState('');
   const [inverted, setInverted] = useState(false);
 
@@ -16,23 +16,23 @@ const NomadUseState = () => {
   return (
     <div>
       <div>
-        <label htmlFor="minutes">Minutes</label>
+        <label htmlFor="km">Km</label>
         <input
-          id="minutes"
+          id="km"
           type="number"
-          placeholder="Minutes"
+          placeholder="km"
           value={inverted ? amounts * 60 : amounts}
           onChange={onChangeMinutes}
           disabled={inverted}
         />
       </div>
       <div>
-        <label htmlFor="hours">Hours</label>
+        <label htmlFor="miles">Miles</label>
         <input
-          id="hours"
+          id="miles"
           type="number"
-          placeholder="Hours"
-          value={inverted ? amounts : Math.round(amounts / 60)}
+          placeholder="Miles"
+          value={inverted ? amounts : Math.round(amounts * 1.6)}
           onChange={onChangeMinutes}
           disabled={!inverted}
         />
@@ -43,4 +43,4 @@ const NomadUseState = () => {
   );
 };
 
-export default NomadUseState;
+export default InsideKmMiles;
