@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     getMovies();
   }, []);
-  console.log(movies);
+  //console.log(movies);
 
   return (
     <div>
@@ -26,6 +26,7 @@ const Home = () => {
           {movies.map((movie) => (
             <Movies
               key={movie.id}
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               year={movie.year}
